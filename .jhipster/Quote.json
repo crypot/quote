@@ -1,0 +1,24 @@
+{
+    "name": "Quote",
+    "fields": [
+        {
+            "fieldName": "created",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "value",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181101090356",
+    "entityTableName": "quote",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "quote",
+    "applications": "*",
+    "microserviceName": "quote"
+}
