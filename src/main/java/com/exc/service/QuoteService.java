@@ -46,6 +46,7 @@ public class QuoteService {
      */
     public QuoteDTO save(QuoteDTO quoteDTO) {
         log.debug("Request to save Quote : {}", quoteDTO);
+        quoteDTO.setId(null);
         QuoteEntityMapper mapper = quoteMapperFactory.getBean(quoteDTO.getBuy(), quoteDTO.getSell());
         Quote quote = mapper.toEntity(quoteDTO);
         QuoteRepository repo = quoteRepositoryFactory.getBean(quoteDTO.getBuy(), quoteDTO.getSell());

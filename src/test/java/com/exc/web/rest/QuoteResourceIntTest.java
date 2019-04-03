@@ -4,47 +4,27 @@ import com.exc.QuoteApp;
 
 import com.exc.config.SecurityBeanOverrideConfiguration;
 
-import com.exc.domain.Quote;
-import com.exc.repository.QuoteRepository;
-import com.exc.web.rest.errors.ExceptionTranslator;
-
-import org.junit.Before;
-import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
-import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.ZonedDateTime;
 import java.time.ZoneOffset;
 import java.time.ZoneId;
-import java.util.List;
 
 
-import static com.exc.web.rest.TestUtil.sameInstant;
-import static com.exc.web.rest.TestUtil.createFormattingConversionService;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
  * Test class for the QuoteResource REST controller.
  *
  * @see QuoteResource
  */
-/*@RunWith(SpringRunner.class)
-@SpringBootTest(classes = {SecurityBeanOverrideConfiguration.class, QuoteApp.class})*/
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = {SecurityBeanOverrideConfiguration.class, QuoteApp.class})
 public class QuoteResourceIntTest {
 
     private static final ZonedDateTime DEFAULT_CREATED = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
@@ -52,11 +32,11 @@ public class QuoteResourceIntTest {
 
     private static final BigDecimal DEFAULT_VALUE = new BigDecimal(1);
     private static final BigDecimal UPDATED_VALUE = new BigDecimal(2);
- /*
-    @Autowired
+
+  /*  @Autowired
     private QuoteRepository quoteRepository;
 
-  @Autowired
+    @Autowired
     private QuoteMapper quoteMapper;
     
     @Autowired

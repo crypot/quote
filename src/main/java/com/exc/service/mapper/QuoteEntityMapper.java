@@ -1,6 +1,4 @@
 package com.exc.service.mapper;
-
-
 import com.exc.domain.Quote;
 import com.exc.service.dto.QuoteDTO;
 

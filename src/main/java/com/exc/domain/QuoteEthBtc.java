@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "quote_eth_btc")
 @ApiModel(description = "quotes history, could be migrated to the mongoDB")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class QuoteEthBtc extends Quote {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "eth_btc_seq")

@@ -30,5 +30,8 @@ public class QuoteServiceTest extends AbstractServiceTest {
 
         assertThat(rs.size()).isEqualTo(1);
 
+        rs = quoteService.getByPeriod(b, s, ZonedDateTime.now().minusDays(22), ZonedDateTime.now());
+        assertThat(rs.size()).isEqualTo(2);
+
     }
 }
